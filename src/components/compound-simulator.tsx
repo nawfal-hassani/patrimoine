@@ -246,7 +246,7 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
           3 scenarios : pessimiste ({pessimisticRate}%), moyen ({params.annualRate}%), optimiste ({optimisticRate}%)
         </p>
 
-        <div className="h-[280px] sm:h-[350px] md:h-[400px]">
+        <div className="h-[220px] sm:h-[350px] md:h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
               <defs>

@@ -201,7 +201,7 @@ export function Sidebar() {
         <SheetContent
           side="left"
           showCloseButton={false}
-          className="w-[260px] border-r border-[rgba(255,255,255,0.06)] bg-[#0a0a0c] p-0 md:hidden"
+          className="w-[min(260px,80vw)] border-r border-[rgba(255,255,255,0.06)] bg-[#0a0a0c] p-0 md:hidden"
         >
           <SidebarContent onNavigate={() => setSidebarOpen(false)} />
         </SheetContent>
