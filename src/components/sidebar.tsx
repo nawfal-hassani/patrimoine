@@ -61,8 +61,8 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
       {/* Logo */}
       <div className="flex h-16 items-center px-6">
         <Link href="/" className="flex items-center gap-2" onClick={onNavigate}>
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#818cf8]/10">
-            <Briefcase className="h-4 w-4 text-[#818cf8]" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#818cf8]/10 text-lg">
+            🐸
           </div>
           <div className="flex flex-col">
             <span className="gradient-text text-base font-bold tracking-tight leading-tight">
