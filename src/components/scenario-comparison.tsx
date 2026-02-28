@@ -88,18 +88,73 @@ export function ScenarioComparison({
       whileHover={{ scale: 1.01, y: -3 }}
       className="glass rounded-[14px] border border-white/[0.06] overflow-hidden hover:border-white/[0.12] hover:shadow-[0_8px_30px_rgba(129,140,248,0.1)] transition-all duration-300"
     >
-      <div className="p-4 sm:p-6 border-b border-white/[0.06]">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+      <div className="p-3 sm:p-6 border-b border-white/[0.06]">
+        <h3 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
           <Calendar className="w-5 h-5 text-indigo-400" />
           Projection par paliers
         </h3>
-        <p className="text-sm text-muted-foreground mt-1">
+        <p className="text-xs sm:text-sm text-muted-foreground mt-1">
           Comparaison des 3 scenarios aux differentes echeances
         </p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px]">
+      {/* Mobile: card layout */}
+      <div className="block sm:hidden p-3 space-y-3">
+        {milestones.map((row, index) => (
+          <motion.div
+            key={row.years}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.7 + index * 0.08 }}
+            className={cn(
+              "rounded-xl border border-white/[0.06] p-3 space-y-3",
+              row.years === durationYears && "bg-indigo-500/5 border-indigo-500/20"
+            )}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                  <span className="text-xs font-bold text-white">{row.years}</span>
+                </div>
+                <span className="text-sm text-muted-foreground">ans</span>
+              </div>
+              <span className="text-xs text-muted-foreground">
+                Investi: <span className="text-white font-medium">{formatCurrency(row.totalContributions)}</span>
+              </span>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-1 mb-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                  <span className="text-[10px] text-red-400/80">Pessimiste</span>
+                </div>
+                <p className="text-sm font-semibold text-red-400">{formatCurrency(row.pessimistic)}</p>
+                <p className="text-[10px] text-red-400/60 mt-0.5">+{formatCurrency(row.pessimisticInterest)}</p>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-1 mb-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                  <span className="text-[10px] text-indigo-400/80">Moyen</span>
+                </div>
+                <p className="text-sm font-semibold text-indigo-400">{formatCurrency(row.average)}</p>
+                <p className="text-[10px] text-indigo-400/60 mt-0.5">+{formatCurrency(row.averageInterest)}</p>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-1 mb-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="text-[10px] text-emerald-400/80">Optimiste</span>
+                </div>
+                <p className="text-sm font-semibold text-emerald-400">{formatCurrency(row.optimistic)}</p>
+                <p className="text-[10px] text-emerald-400/60 mt-0.5">+{formatCurrency(row.optimisticInterest)}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Desktop: table layout */}
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full">
           <thead>
             <tr className="border-b border-white/[0.06]">
               <th className="text-left text-xs font-medium text-muted-foreground p-4">Duree</th>
@@ -197,10 +252,10 @@ export function ScenarioComparison({
       </div>
 
       {/* Footer note */}
-      <div className="p-4 border-t border-white/[0.06] bg-white/[0.01]">
-        <p className="text-xs text-muted-foreground/60 flex items-center gap-1.5">
-          <TrendingUp className="w-3.5 h-3.5" />
-          Calcul base sur les interets composes mensuels. Formule : FV = PV(1+r)^n + PMT[((1+r)^n - 1)/r]
+      <div className="p-3 sm:p-4 border-t border-white/[0.06] bg-white/[0.01]">
+        <p className="text-[10px] sm:text-xs text-muted-foreground/60 flex items-center gap-1.5">
+          <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" />
+          <span>Calcul base sur les interets composes mensuels</span>
         </p>
       </div>
     </motion.div>

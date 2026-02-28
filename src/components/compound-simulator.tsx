@@ -187,19 +187,19 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Sliders */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="glass rounded-[14px] border border-white/[0.06] p-4 sm:p-6"
+        className="glass rounded-[14px] border border-white/[0.06] p-3 sm:p-6"
       >
-        <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+        <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-indigo-400" />
           Parametres de simulation
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {sliders.map((slider, index) => (
             <motion.div
               key={slider.key}
@@ -209,11 +209,11 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
               className="space-y-3"
             >
               <div className="flex items-center justify-between">
-                <Label className="text-sm text-muted-foreground flex items-center gap-2">
+                <Label className="text-xs sm:text-sm text-muted-foreground flex items-center gap-1.5 sm:gap-2">
                   {slider.icon}
                   {slider.label}
                 </Label>
-                <span className="text-sm font-semibold text-white bg-white/5 px-3 py-1 rounded-lg">
+                <span className="text-xs sm:text-sm font-semibold text-white bg-white/5 px-2 sm:px-3 py-1 rounded-lg">
                   {slider.format(slider.value)}
                 </span>
               </div>
@@ -239,16 +239,16 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass rounded-[14px] border border-white/[0.06] p-4 sm:p-6"
+        className="glass rounded-[14px] border border-white/[0.06] p-3 sm:p-6"
       >
-        <h3 className="text-lg font-semibold text-white mb-2">Projection de croissance</h3>
-        <p className="text-sm text-muted-foreground mb-6">
+        <h3 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Projection de croissance</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
           3 scenarios : pessimiste ({pessimisticRate}%), moyen ({params.annualRate}%), optimiste ({optimisticRate}%)
         </p>
 
         <div className="h-[220px] sm:h-[350px] md:h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
+            <AreaChart data={chartData} margin={{ top: 5, right: 5, left: -10, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorOptimistic" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#34d399" stopOpacity={0.3} />
@@ -352,7 +352,7 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
       </motion.div>
 
       {/* Summary cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         {[
           {
             label: "Pessimiste",
@@ -391,7 +391,7 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
             whileHover={{ scale: 1.04, y: -4 }}
-            className={`glass rounded-[14px] border ${scenario.borderColor} p-5 cursor-pointer hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300`}
+            className={`glass rounded-[14px] border ${scenario.borderColor} p-3 sm:p-5 cursor-pointer hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300`}
           >
             <div className="flex items-center gap-2 mb-4">
               <div className={`w-2.5 h-2.5 rounded-full ${scenario.dotColor}`} />

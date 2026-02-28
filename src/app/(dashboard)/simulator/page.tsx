@@ -38,7 +38,7 @@ export default function SimulatorPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="border-b border-white/[0.06] px-4 sm:px-6 md:px-8 py-6"
+        className="border-b border-white/[0.06] px-3 sm:px-6 md:px-8 py-4 sm:py-6"
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -62,13 +62,13 @@ export default function SimulatorPage() {
         </div>
       </motion.div>
 
-      <div className="px-4 sm:px-6 md:px-8 py-8 space-y-8">
+      <div className="px-3 sm:px-6 md:px-8 py-4 sm:py-8 space-y-4 sm:space-y-8">
         {/* Intro card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="glass rounded-[14px] border border-white/[0.06] p-6 flex flex-col md:flex-row items-center gap-6"
+          className="glass rounded-[14px] border border-white/[0.06] p-4 sm:p-6 flex flex-col md:flex-row items-center gap-4 sm:gap-6"
         >
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0">
             <Calculator className="w-7 h-7 text-white" />
@@ -114,7 +114,7 @@ export default function SimulatorPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"
         >
           {[
             {
@@ -147,7 +147,7 @@ export default function SimulatorPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-              className={`glass rounded-[14px] border ${tip.borderColor} p-5`}
+              className={`glass rounded-[14px] border ${tip.borderColor} p-4 sm:p-5`}
             >
               <div className={`w-10 h-10 rounded-xl ${tip.bgColor} flex items-center justify-center mb-4`}>
                 {tip.icon}
@@ -163,7 +163,7 @@ export default function SimulatorPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.0 }}
-          className="glass rounded-[14px] border border-white/[0.06] p-6 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="glass rounded-[14px] border border-white/[0.06] p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
