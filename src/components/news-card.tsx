@@ -74,8 +74,9 @@ export function NewsCard({
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02, y: -4 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass rounded-[14px] overflow-hidden flex flex-col sm:flex-row hover:border-white/12 transition-all duration-300 group cursor-pointer"
+      className="glass rounded-[14px] overflow-hidden flex flex-col sm:flex-row hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300 group cursor-pointer"
     >
       {/* Image */}
       <div className="relative w-full sm:w-[200px] md:w-[260px] h-[180px] sm:h-auto flex-shrink-0 overflow-hidden">

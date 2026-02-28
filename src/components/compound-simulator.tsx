@@ -390,7 +390,8 @@ export function CompoundSimulator({ onParamsChange }: CompoundSimulatorProps = {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-            className={`glass rounded-[14px] border ${scenario.borderColor} p-5`}
+            whileHover={{ scale: 1.04, y: -4 }}
+            className={`glass rounded-[14px] border ${scenario.borderColor} p-5 cursor-pointer hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300`}
           >
             <div className="flex items-center gap-2 mb-4">
               <div className={`w-2.5 h-2.5 rounded-full ${scenario.dotColor}`} />

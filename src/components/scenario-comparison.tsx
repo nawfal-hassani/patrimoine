@@ -85,7 +85,8 @@ export function ScenarioComparison({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.6 }}
-      className="glass rounded-[14px] border border-white/[0.06] overflow-hidden"
+      whileHover={{ scale: 1.01, y: -3 }}
+      className="glass rounded-[14px] border border-white/[0.06] overflow-hidden hover:border-white/[0.12] hover:shadow-[0_8px_30px_rgba(129,140,248,0.1)] transition-all duration-300"
     >
       <div className="p-4 sm:p-6 border-b border-white/[0.06]">
         <h3 className="text-lg font-semibold text-white flex items-center gap-2">

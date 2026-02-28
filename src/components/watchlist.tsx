@@ -193,7 +193,8 @@ export function Watchlist() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.04] hover:bg-white/[0.06] transition-colors group"
+                whileHover={{ scale: 1.02, y: -2 }}
+                className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/[0.04] hover:bg-white/[0.06] hover:border-white/[0.12] hover:shadow-[0_4px_20px_rgba(129,140,248,0.08)] transition-all duration-200 group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center">

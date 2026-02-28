@@ -76,8 +76,9 @@ export function PerformersList({
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.03, y: -4 }}
         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-        className="glass rounded-[14px] p-4 sm:p-6"
+        className="glass rounded-[14px] p-4 sm:p-6 cursor-pointer hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300"
       >
         <div className="flex items-center gap-2 mb-4">
           <div className="p-2 rounded-[8px] bg-emerald-400/10">
@@ -100,8 +101,9 @@ export function PerformersList({
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.03, y: -4 }}
         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-        className="glass rounded-[14px] p-4 sm:p-6"
+        className="glass rounded-[14px] p-4 sm:p-6 cursor-pointer hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300"
       >
         <div className="flex items-center gap-2 mb-4">
           <div className="p-2 rounded-[8px] bg-red-400/10">

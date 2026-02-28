@@ -36,8 +36,9 @@ function KpiCard({ label, value, subtitle, icon, color, bgColor, status, index }
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      whileHover={{ scale: 1.04, y: -4 }}
       className={cn(
-        "glass rounded-[14px] p-5 border transition-all duration-300 hover:border-white/10",
+        "glass rounded-[14px] p-5 border cursor-pointer transition-all duration-300 hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)]",
         statusConfig[status]
       )}
     >

@@ -49,8 +49,9 @@ export function MarketCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.03, y: -4 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass rounded-[14px] p-5 hover:border-white/10 transition-all duration-300 group cursor-pointer"
+      className="glass rounded-[14px] p-5 hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300 group cursor-pointer"
     >
       <div className="flex items-start justify-between mb-3">
         <div>

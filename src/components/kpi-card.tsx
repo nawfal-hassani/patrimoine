@@ -25,10 +25,11 @@ export function KpiCard({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.03, y: -4 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       className={cn(
-        "glass rounded-[14px] p-4 sm:p-6 relative overflow-hidden group",
-        "hover:border-white/[0.12] transition-all duration-300"
+        "glass rounded-[14px] p-4 sm:p-6 relative overflow-hidden group cursor-pointer",
+        "hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.12)] transition-all duration-300"
       )}
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#818cf8]/[0.06] to-transparent rounded-bl-full" />

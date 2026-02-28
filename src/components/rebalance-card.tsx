@@ -57,9 +57,10 @@ export function RebalanceCard({ suggestion, index }: RebalanceCardProps) {
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
+      whileHover={{ scale: 1.02, y: -4 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       className={cn(
-        "glass rounded-[14px] p-5 border transition-all duration-300 hover:border-white/10",
+        "glass rounded-[14px] p-5 border cursor-pointer transition-all duration-300 hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.1)]",
         config.bg
       )}
     >

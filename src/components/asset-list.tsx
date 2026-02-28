@@ -192,11 +192,12 @@ export function AssetList({ assets }: AssetListProps) {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.98 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
                   transition={{ duration: 0.35, delay: index * 0.04 }}
                   onClick={() => setSelectedAsset(asset)}
                   className={cn(
                     "glass rounded-[14px] p-4 cursor-pointer group",
-                    "hover:border-white/[0.12] transition-all duration-200"
+                    "hover:border-white/[0.15] hover:shadow-[0_8px_30px_rgba(129,140,248,0.1)] transition-all duration-200"
                   )}
                 >
                   <div className="flex items-center justify-between gap-4">
